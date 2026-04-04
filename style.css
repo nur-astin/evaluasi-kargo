@@ -1,0 +1,310 @@
+/* 1. RESET & DASAR */
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  background-color: #f4f7f6;
+  overflow-x: hidden;
+}
+
+/* 2. LANDING PAGE (LOGIN & REGISTER) */
+.landing-page {
+  display: flex;
+  height: 100vh;
+}
+
+.hero {
+  flex: 1.2;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1544016768-982d1554f0b9?q=80&w=1974&auto=format&fit=crop");
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+}
+
+.login-section {
+  flex: 0.8;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+}
+
+.form-box {
+  max-width: 400px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+h2 {
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+.subtitle {
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #d32f2f;
+  box-shadow: 0 0 5px rgba(211, 47, 47, 0.2);
+}
+
+/* 3. TOMBOL UTAMA */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #031240;
+  transform: scale(1.02);
+}
+
+/* PERBAIKAN WARNA LINK (MERAH) */
+.links a {
+  color: #d32f2f !important; /* Warna merah Trigana */
+  text-decoration: none; /* Hapus garis bawah */
+  font-weight: bold;
+}
+
+.links a:hover {
+  text-decoration: underline; /* Garis bawah muncul saat hover */
+  color: #031240; /* Biru gelap saat hover */
+}
+
+/* 4. NAVBAR & DROPDOWN */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2c3e50;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+}
+
+.dropbtn:active,
+.dropbtn:focus {
+  border-bottom: 3px solid #f1c40f;
+  color: #f1c40f;
+}
+
+.brand {
+  color: #e74c3c;
+  margin-right: 30px;
+  font-size: 1.2rem;
+}
+
+.dropdown {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.dropbtn {
+  color: white;
+  padding: 0 15px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 220px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  z-index: 3000;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.dropdown:hover > .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropbtn {
+  background-color: #34495e;
+}
+
+.logout-btn {
+  margin-left: auto;
+  color: #ecf0f1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 5. KONTEN & CARD */
+.content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-top: 6px solid #d32f2f;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 20px;
+}
+
+/* 6. GOOGLE FORM STYLE (TAM) */
+.form-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  border-radius: 8px 8px 0 0;
+  margin: -30px -30px 25px -30px;
+}
+
+.likert-scale {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.likert-scale label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.7rem;
+  flex: 1;
+}
+
+.likert-scale input[type="radio"] {
+  accent-color: #d32f2f;
+}
+
+/* 7. PERBAIKAN SLIDER (FADE EFFECT SATU PER SATU) */
+.slider-container {
+  width: 100%;
+  max-width: 850px;
+  height: 400px;
+  margin: 0 auto 20px auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.slide-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slide-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 8. LAYOUT KHUSUS CETAK (PRINT) */
+@media print {
+  .navbar,
+  .btn-primary,
+  .hero,
+  .login-section,
+  .dropdown,
+  .logout-btn,
+  .slider-container {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+  .card {
+    box-shadow: none;
+    border: 1px solid #eeeeee;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+  .content {
+    padding: 0;
+  }
+}
+
+/* Gaya Pesan Peringatan yang Tipis dan Soft */
+#error-text {
+  color: #ce7e75;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #fdf2f2;
+  border-radius: 6px;
+  border: 1px solid #fadbd8;
+  display: none;
+  text-align: left;
+}
